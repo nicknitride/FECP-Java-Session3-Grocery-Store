@@ -15,8 +15,25 @@ public class Main {
         System.out.println("6. Exit\n");
     }
 
+    static String viewInventory(HashMap<String, Integer> inventoryHash){
+        String outputString= "";
+        System.out.println("------- Inventory List ----------");
+        inventoryHash.forEach((key, val) ->
+                System.out.println("Product: " + key + ", Value: " + val)
+        );
+        outputString = "Inventory Size: "+inventoryHash.size();
+        System.out.println("------------------------");
+        return outputString;
+    }
+
+    static String addProduct(String key, int stockValue, HashMap<String, Integer> inventoryHash){
+        String outputString = "";
+        inventoryHash.put(key,stockValue);
+        outputString="Added "+key+" ("+stockValue+")";
+        return outputString;
+    }
     public static void main(String[] args) {
-        HashMap<String, Integer> inventoryHashMap;
+        HashMap<String, Integer> inventoryHashMap = new HashMap<>();
 
         boolean exitCondition = false;
         Scanner userInput = new Scanner(System.in);
@@ -30,6 +47,14 @@ public class Main {
                     exitCondition=true;
                 case "1":
                     System.out.println("Displaying inventory");
+                    System.out.println(viewInventory(inventoryHashMap));
+                case "2":
+                    System.out.print("Enter product name: ");
+                    String userKey = userInput.nextLine();
+                    System.out.print("Enter quantity: ");
+                    int userStockVal = userInput.nextInt();
+                    userInput.nextLine();
+                    System.out.println(addProduct(userKey, userStockVal,inventoryHashMap));
                 default:
                     System.out.println("Enter a number between [1-6]");
             }
