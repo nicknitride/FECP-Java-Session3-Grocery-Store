@@ -35,13 +35,17 @@ public class Main {
     static String addProduct(String key, int stockValue, HashMap<String, Integer> inventoryHash){
         String outputString = "";
         inventoryHash.put(key,stockValue);
-        outputString="Added "+key+" ("+stockValue+")";
+        if (inventoryHash.get(key)==stockValue){
+            outputString="Added "+key+" ("+stockValue+")";
+        }else{
+            outputString ="Failed to add."; //Likely not possible, as it will fail elsewhere
+        }
         return outputString;
     }
 
     static String checkProduct(String key, HashMap<String, Integer>inventoryHash){
         System.out.println("Checking product: "+key);
-        String output = "";
+        String output;
         if(inventoryHash.get(key)==null){
             System.out.println("Product may not exist.");
             output = "null";
@@ -54,10 +58,10 @@ public class Main {
     }
 
     static String updateProduct(String key, int newVal,HashMap<String, Integer>inventoryHash){
-        String output = "";
+        String output;
         if(inventoryHash.get(key)==null){
-            System.out.println("Didn't find the item. Please add "+key+"to the inventory");
-            output ="Didn't find the item. Please add "+key+"to the inventory";
+            System.out.println("Didn't find the item. Please add "+key+" to the inventory");
+            output ="Didn't find the item. Please add "+key+" to the inventory";
         }
         else{
             inventoryHash.replace(key,newVal);
