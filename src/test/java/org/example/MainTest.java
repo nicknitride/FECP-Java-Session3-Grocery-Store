@@ -67,8 +67,4 @@ class MainTest {
         Assertions.assertTrue(inventorySize.contains("Inventory Size: 1"));
         Assertions.assertTrue(actualMethod.contains("Removed: 20"));
     }
-//
-//    @Test
-//    void removeProduct() {
-//    }
 }
