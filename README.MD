@@ -1,6 +1,13 @@
 # Lab 1: Part 1 of 2 Grocery Store Inventory System
 ## Author: Nicholo Pardines
 # Unit Testing
+![img_1.png](Unit_Testing.png)
+## Unit Test Coverage
+![img_1.png](coverage.png)
+- 6/8 method coverage since it doesn't test:
+  - Main
+  - displayGroceryMenu()
+- Testing not needed for the two methods.
 # Demo Output
 ## View Empty Inventory
 ![](view_empty.png)

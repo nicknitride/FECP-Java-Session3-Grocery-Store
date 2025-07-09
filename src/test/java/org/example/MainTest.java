@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class MainTest {
     HashMap<String, Integer> emptyInventory = new HashMap<>();
     HashMap<String, Integer> inventoryWithContent;
-
     @BeforeEach
     void setup(){
         inventoryWithContent = new HashMap<>();
@@ -84,4 +83,5 @@ class MainTest {
         String nonExistent = Main.removeProduct("Pizza",inventoryWithContent);
        Assertions.assertTrue(nonExistent.contains("Pizza not found. Nothing to be removed"));
     }
+
 }
