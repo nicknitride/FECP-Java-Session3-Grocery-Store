@@ -34,8 +34,10 @@ class MainTest {
 
     @Test
     void addProduct() {
-    String actual = Main.addProduct("Potato",363,inventoryWithContent);
-    Assertions.assertTrue(actual.contains("Added Potato (363)"));
+    String required = Main.addProduct("Banana",30,inventoryWithContent);
+    Assertions.assertTrue(required.contains("Added Banana (30)"));
+    String second = Main.addProduct("Fresh Milk",400,inventoryWithContent);
+    Assertions.assertTrue(second.contains("Added Fresh Milk (400)"));
     }
 //
     @Test

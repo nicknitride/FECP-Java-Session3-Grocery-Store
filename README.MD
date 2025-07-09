@@ -1,7 +1,6 @@
 # Lab 1: Part 1 of 2 Grocery Store Inventory System
 ## Author: Nicholo Pardines
 # Unit Testing
-![img_1.png](unit_test_resutlts.png)
 # Demo Output
 ## View Empty Inventory
 ![](view_empty.png)
