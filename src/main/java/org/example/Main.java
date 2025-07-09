@@ -72,8 +72,12 @@ public class Main {
     }
 
     static String removeProduct(String key, HashMap<String, Integer> inventoryHash){
-        int removedValue = inventoryHash.remove(key);
-        return "Removed: "+removedValue;
+        if(!inventoryHash.containsKey(key)){
+            return key+" not found. Nothing to be removed";
+        }else{
+            int removedValue = inventoryHash.remove(key);
+            return "Removed: "+removedValue;
+        }
     }
     public static void main(String[] args) {
         HashMap<String, Integer> inventoryHashMap = new HashMap<>();
